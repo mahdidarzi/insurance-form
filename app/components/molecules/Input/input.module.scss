@@ -1,0 +1,32 @@
+%inputBase {
+  @apply border border-[#B4B4B4] w-[320px] h-[48px] p-[13px] outline-0;
+  border-color: #B4B4B4 !important;
+}
+
+.inputtemp {
+  @extend %inputBase;
+}
+
+.inputError {
+  @extend %inputBase;
+  border-color: #e61f10 !important;
+  color: #e61f10;
+}
+
+.inputtemp:focus {
+  @extend %inputBase;
+}
+
+.inputtemp:active {
+  @extend %inputBase;
+}
+
+.inputtemp:focus-visible {
+  @extend %inputBase;
+}
+
+.inputtemp:disabled {
+  @extend %inputBase;
+  border: 1px solid saddlebrown !important;
+
+}
