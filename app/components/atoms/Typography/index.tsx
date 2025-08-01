@@ -1,6 +1,6 @@
 import React, { JSX, ReactNode } from 'react';
 import classNames from 'classnames';
-import './typography.module.scss';
+import styles from './typography.module.scss';
 
 export type TypographyVariant =
   | 'text-medium-16-100'
@@ -28,7 +28,11 @@ const Typography = ({
   as: Tag = 'p',
   variant,
 }: TypographyProps) => {
-  return <Tag className={classNames(variant, className)}>{children}</Tag>;
+ return (
+    <Tag className={classNames(styles[variant], className)}>
+      {children}
+    </Tag>
+ )
 };
 
 export default Typography;

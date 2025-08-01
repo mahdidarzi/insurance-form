@@ -10,17 +10,17 @@ const meta: Meta<TypographyProps> = {
     variant: {
       control: 'select',
       options: [
-        'tex-medium-16-100',
-        'tex-medium-14-100-gray',
-        'tex-normal-14-100-black',
-        'tex-normal-14-100-gray',
-        'tex-semibold-18-100-black',
-        'tex-normal-12-100-gray',
-        'tex-normal-14-28-black',
-        'tex-medium-16-100-gray',
-        'tex-normal-14-100-red',
-        'tex-medium-18-100',
-        'tex-medium-16-170',
+        'text-medium-16-100',
+        'text-medium-14-100-gray',
+        'text-normal-14-100-black',
+        'text-normal-14-100-gray',
+        'text-semibold-18-100-black',
+        'text-normal-12-100-gray',
+        'text-normal-14-28-black',
+        'text-medium-16-100-gray',
+        'text-normal-14-100-red',
+        'text-medium-18-100',
+        'text-medium-16-170',
       ],
     },
     as: {
@@ -39,7 +39,7 @@ type Story = StoryObj<TypographyProps>;
 export const Default: Story = {
   args: {
     children: 'Hello Typography!',
-    variant: 'text-medium-16-100',
+    variant: 'text-normal-14-100-red',
     as: 'p',
   },
 };
