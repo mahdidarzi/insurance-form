@@ -1,0 +1,93 @@
+@use 'sass:math';
+
+// Base
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  @apply flex flex-row justify-center items-center
+}
+
+// Shared sizes
+$padding-x: 26px;
+$padding-y: 12px;
+
+.primary {
+  width: 131px;
+  height: 49px;
+  padding: $padding-y $padding-x;
+  background-color: #DAD8D8;
+
+  &:not(.disabled) {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  &.disabled {
+    background-color: #DAD8D8;
+    color: #858484;
+    cursor: not-allowed;
+  }
+}
+
+.secondary {
+  width: 131px;
+  height: 47px;
+  padding: $padding-y $padding-x;
+  background-color: #000000;
+  color: #ffffff;
+
+  &.disabled {
+    background-color: #DAD8D8;
+    color: #858484;
+  }
+}
+
+.outline {
+  width: 165px;
+  height: 47px;
+  padding: 10px 0;
+  border: 1px solid #000000;
+  background-color: transparent;
+  color: #000000;
+
+  &.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.outline-filled {
+  width: 165px;
+  height: 47px;
+  padding: 10px 0;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.cta {
+  width: 320px;
+  height: 48px;
+  background-color: #FFC453;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+}
+
+.minimal {
+  width: 340px;
+  height: 49px;
+  padding: $padding-y $padding-x;
+  background-color: #ffffff;
+  color: #000000;
+
+  &.disabled {
+    background-color: #DAD8D8;
+    color: #858484;
+  }
+}
