@@ -1,0 +1,61 @@
+// Define color variables
+$color-black: #000000;
+$color-gray-dark: #757575;
+$color-gray-medium: #808080;
+$color-gray-light: #858484;
+$color-red: #E61F10;
+
+// Base mixin
+@mixin baseText($weight, $size, $leading, $color: $color-black) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $leading;
+  color: $color;
+}
+
+.tex-medium-16-100 {
+  @include baseText(500, 16px, 100%, $color-black);
+}
+
+.tex-medium-14-100-gray {
+  @include baseText(500, 14px, 100%, $color-gray-dark);
+}
+
+.tex-normal-14-100-black {
+  @include baseText(400, 14px, 100%, $color-black);
+}
+
+.tex-normal-14-100-gray {
+  @include baseText(400, 14px, 100%, $color-gray-medium);
+}
+
+.tex-semibold-18-100-black {
+  @include baseText(600, 18px, 100%, $color-black);
+}
+
+.tex-normal-12-100-gray {
+  @include baseText(400, 12px, 100%, $color-gray-dark);
+}
+
+.tex-normal-14-28-black {
+  @include baseText(400, 14px, 28px, $color-black);
+}
+
+.tex-medium-16-100-gray {
+  @include baseText(500, 16px, 100%, $color-gray-light);
+}
+
+.tex-normal-14-100-red {
+  @include baseText(400, 14px, 100%, $color-red);
+}
+
+.tex-medium-18-100 {
+  @include baseText(500, 18px, 100%, $color-black);
+}
+
+.tex-medium-16-170 {
+  @include baseText(500, 16px, 170%, $color-black);
+}
+
+// Assign classes to original .texN names with @extend as before
+// eg: .tex1  { @extend .tex-medium-18-100; }
