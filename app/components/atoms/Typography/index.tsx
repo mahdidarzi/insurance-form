@@ -15,7 +15,7 @@ export type TypographyVariant =
   | 'text-medium-18-100'
   | 'text-medium-16-170';
 
-interface TypographyProps {
+export interface TypographyProps {
   children: ReactNode;
   className?: string;
   as?: keyof JSX.IntrinsicElements;
