@@ -1,6 +1,6 @@
 import React, { JSX, ReactNode } from 'react';
 import classNames from 'classnames';
-import './typography.scss';
+import './typography.module.scss';
 
 export type TypographyVariant =
   | 'text-medium-16-100'
