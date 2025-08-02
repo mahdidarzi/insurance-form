@@ -28,6 +28,7 @@ const Input = ({
   type = 'text',
   disabled = false,
   className,
+  ...rest
 }: InputProps) => {
   return (
     <div dir='rtl'
@@ -41,20 +42,20 @@ const Input = ({
         id={name}
         name={name}
         placeholder={placeholder}
-        value={value}
+        {...(value !== undefined ? { value } : {})}
         onChange={onChange}
         onBlur={onBlur}
         type={type}
         disabled={disabled}
-      // className={styles.inputError}
-      className={classNames(styles.inputtemp, { [styles.inputError]: error })}
-
+        // className={styles.inputError}
+        className={classNames(styles.inputtemp, { [styles.inputError]: error })}
+        inputMode='numeric'
+        {...rest}
       />
-      {error && (
-        <Typography variant="text-normal-14-100-red" as="p" className={classNames (styles.errorText,'mt-1')}>
-          {typeof error === 'string' ? error : error.message}
-        </Typography>
-      )}
+      <Typography
+        variant="text-normal-14-100-red" as="p" className={classNames(styles.errorText, 'h-[22px] flex items-center', error ? 'opacity-100' : 'opacity-0')}>
+        {typeof error === 'string' ? error : error?.message}
+      </Typography>
     </div>
   );
 };

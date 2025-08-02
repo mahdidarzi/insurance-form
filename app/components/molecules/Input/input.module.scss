@@ -1,6 +1,9 @@
 %inputBase {
-  @apply border border-[#B4B4B4] w-[320px] h-[48px] p-[13px] outline-0;
+  @apply border border-[#B4B4B4] w-[320px] h-[48px] p-[13px] outline-0 font-[60px];
   border-color: #B4B4B4 !important;
+  font-size: 14px !important;
+  color: #757575 !important;
+  font-weight: 500 !important;
 }
 
 .inputtemp {
@@ -10,7 +13,27 @@
 .inputError {
   @extend %inputBase;
   border-color: #e61f10 !important;
-  color: #e61f10;
+  color: #e61f10 !important;
+}
+.inputError:focus {
+  @extend %inputBase;
+  border-color: #e61f10 !important;
+  color: #e61f10 !important;
+}
+.inputError:active {
+  @extend %inputBase;
+  border-color: #e61f10 !important;
+  color: #e61f10 !important;
+}
+.inputError:focus-within {
+  @extend %inputBase;
+  border-color: #e61f10 !important;
+  color: #e61f10 !important;
+}
+.inputError:focus {
+  @extend %inputBase;
+  border-color: #e61f10 !important;
+  color: #e61f10 !important;
 }
 
 .inputtemp:focus {

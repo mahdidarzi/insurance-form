@@ -85,7 +85,6 @@ const {
     phone: '',
   },
 });
-console.log('errors',errors);
 
     return (
       <form

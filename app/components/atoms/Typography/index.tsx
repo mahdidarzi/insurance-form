@@ -13,6 +13,7 @@ export type TypographyVariant =
   | 'text-medium-16-100-gray'
   | 'text-normal-14-100-red'
   | 'text-medium-18-100'
+  | 'text-semibold-16-100-black'
   | 'text-medium-16-170';
 
 export interface TypographyProps {

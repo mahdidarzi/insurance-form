@@ -38,7 +38,7 @@ const Button = ({
         className
       )}
     >
-      <Typography
+      {/* <Typography
         variant={
           variant === 'cta'
             ? 'text-medium-16-170'
@@ -46,12 +46,12 @@ const Button = ({
               ? 'text-medium-16-100-gray'
               : 'text-medium-16-100'
         }
-      >
+      > */}
         <span style={{ display: 'inline-flex', alignItems: 'center' }}>
           {children}
           {loading && <span className='ml-[0px] max-w-[30px] max-h-[49px] flex items-center justify-center'><Loading /></span>}
         </span>
-      </Typography>
+      {/* </Typography> */}
     </button>
   );
 };

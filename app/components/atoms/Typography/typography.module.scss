@@ -32,6 +32,9 @@ $color-red: #E61F10;
 .text-semibold-18-100-black {
   @include baseText(600, 18px, 100%, $color-black);
 }
+.text-semibold-16-100-black {
+  @include baseText(600, 16px, 100%, $color-black);
+}
 
 .text-normal-12-100-gray {
   @include baseText(400, 12px, 100%, $color-gray-dark);
