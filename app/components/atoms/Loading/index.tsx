@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './loading.module.scss';
 
-export type LoadingSize = '.25' | '.5' | '.75' | '1';
+export type LoadingSize = '.30' | '.5' | '.75' | '1';
 
 export interface LoadingProps {
   className?: string;
   size?: LoadingSize;
 }
 
-const Loading = ({ size = '.25' }: LoadingProps) => {
+const Loading = ({ size = '.30' }: LoadingProps) => {
   const colors = [
     '#383A39B2',
     '#00000080',
@@ -20,8 +20,10 @@ const Loading = ({ size = '.25' }: LoadingProps) => {
     '#CBCCCC',
     '#D1D2D2',
     '#EBEBEB',
-    '#00000080',
-    '#11111199',
+    '#EBEBEB',
+    '#EBEBEB',
+    // '#00000080',
+    // '#11111199',
   ];
 
   return (

@@ -38,20 +38,11 @@ const Button = ({
         className
       )}
     >
-      {/* <Typography
-        variant={
-          variant === 'cta'
-            ? 'text-medium-16-170'
-            : disabled || loading
-              ? 'text-medium-16-100-gray'
-              : 'text-medium-16-100'
-        }
-      > */}
+    
         <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-          {children}
           {loading && <span className='ml-[0px] max-w-[30px] max-h-[49px] flex items-center justify-center'><Loading /></span>}
+          {children}
         </span>
-      {/* </Typography> */}
     </button>
   );
 };

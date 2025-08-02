@@ -9,7 +9,7 @@ const meta: Meta<LoadingProps> = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['.25', '.5', '.75', '1'],
+      options: ['.30', '.5', '.75', '1'],
     },
     className: { control: false },
   },
@@ -21,6 +21,6 @@ type Story = StoryObj<LoadingProps>;
 
 export const Default: Story = {
   args: {
-    size: '.25',
+    size: '.30',
   },
 };

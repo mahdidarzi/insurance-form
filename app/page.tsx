@@ -1,7 +1,7 @@
 "use client";
 
 import { Typography } from "@/app/components/atoms";
-import { Button, Input } from "@/app/components/molecules";
+import { Button, Input, Modal } from "@/app/components/molecules";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from "react-hook-form";
 import { z } from 'zod';
@@ -142,6 +142,14 @@ export default function Home() {
         </form>
 
         {/* sections 3*/}
+
+        {/* sections modal*/}
+        <Modal title={"انتخاب آدرس"} onClose={function (): void {
+          throw new Error("Function not implemented.");
+        }} isOpen={true}>
+          <div className="h-[195px] border"></div>
+        </Modal>
+        {/* sections modal*/}
 
 
 
