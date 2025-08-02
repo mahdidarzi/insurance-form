@@ -1,12 +1,61 @@
 "use client";
 
-import { Typography } from "@/app/components/atoms";
+import { RadioButton, Typography } from "@/app/components/atoms";
 import { Button, Input, Modal } from "@/app/components/molecules";
 import { zodResolver } from '@hookform/resolvers/zod';
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from 'zod';
 
 export default function Home() {
+
+  useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const res = await fetch('https://front-end-task.bmbzr.ir/my-addresses/', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cookie': 'connect.sid=s%3AMSHqW055L1x6v_yZvHrCnfEtiPCDqOk2.Vi%2FeqDS4pcwV05BaghaNfkvKdGB9OcMMBG00LxY9QQ8',
+        },
+        credentials: 'include', // Important for cookies to work
+      });
+
+      const data = await res.json();
+      console.log('Fetched data:', data);
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  };
+
+  fetchData();
+}, []);
+
+  interface AddressItem {
+    id: string;
+    title: string;
+    description: string;
+  }
+
+  const mockAddresses: AddressItem[] = [
+    {
+      id: "1",
+      title: "آدرس شماره 1",
+      description: "فارس، شیراز، خیابان جمهوری، بالاتر از فلان، پلاک ۶، واحد ۲۳۴",
+    },
+    {
+      id: "2",
+      title: "آدرس شماره 2",
+      description: "تهران، خیابان ولیعصر، کوچه بهار، پلاک ۱۲۳",
+    },
+    {
+      id: "3",
+      title: "آدرس شماره 3",
+      description: "تهران، خیابان ولیعصر، کوچه بهار، پلاک ۱۲۳",
+    },
+  ];
+
+
   const data = [
     { label: "شرکت بیمه گر", value: "پارسیان" },
     { label: "برند خودرو", value: "پژو" },
@@ -42,6 +91,23 @@ export default function Home() {
     },
   });
   console.log('errors', errors);
+  const [selectedId, setSelectedId] = useState<string>(mockAddresses[0].id);
+  const [addresses, setAddresses] = useState<AddressItem[]>(mockAddresses);
+  const handleSelect = (id: string) => {
+    setSelectedId(id);
+  };
+
+  const handleRemove = (e: React.MouseEvent, id: string) => {
+    e.stopPropagation();  // prevents bubbling to parent
+    e.preventDefault();   // prevents default behavior
+
+    setAddresses((prev) => prev.filter((item) => item.id !== id));
+
+    if (id === selectedId) {
+      setSelectedId(addresses.length > 1 ? addresses[0].id : "");
+    }
+  };
+
 
   return (
     <div>
@@ -144,19 +210,50 @@ export default function Home() {
         {/* sections 3*/}
 
         {/* sections modal*/}
-        <Modal title={"انتخاب آدرس"} onClose={function (): void {
+        <Modal hasSingleButton title={"انتخاب آدرس"} onClose={function (): void {
           throw new Error("Function not implemented.");
         }} isOpen={true}>
-          <div className="h-[195px] border"></div>
+          <div className="h-[195px] flex flex-col border gap-y-4">
+            {addresses.map((item) => {
+              return (
+                <div onClick={() => setSelectedId(item.id)} key={item.id} className="cursor-pointer">
+                  <div className="flex items-center justify-between h-[22px]">
+                    <div className="flex items-center justify-between">
+                      <RadioButton name={"address"} value={item.id} checked={selectedId === item.id} onChange={handleSelect}
+                        label={"address"} />
+                      <Typography as="div" className="!font-medium mr-1.5" variant={"text-normal-14-100-black"}>{item.title}</Typography>
+                    </div>
+                    <button
+                      onClick={(e) => handleRemove(e, item.id)}
+                      aria-label="بستن"
+                      className="text-[#FFA5A5] w-2.5 h-2.5 flex items-center justify-center  mx-3 cursor-pointer"
+                      type="button"
+                    >
+                      {/* Simple close icon (X) */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-3.5 h-3.5"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <line x1="1" y1="1" x2="13" y2="13" />
+                        <line x1="13" y1="1" x2="1" y2="13" />
+                      </svg>
+                    </button>
+
+                  </div>
+                  <Typography as="div" className="h-[19px] mt-2 mr-6" variant={"text-normal-12-100-gray"}>{item.description}</Typography>
+                </div>
+              )
+            })}
+
+          </div>
         </Modal>
         {/* sections modal*/}
-
-
-
-
-
-
-
       </main>
     </div>
   );
