@@ -10,7 +10,7 @@ export const GENERAL_CONTENT = {
   SELECT_ADDRESS_BUTTON: 'انتخاب آدرس‌های من',
   SUBMIT_BUTTON: 'تایید و ادامه',
 
-  // اضافه‌شده‌ها:
+  
   NATIONAL_ID_LABEL: 'کد ملی:',
   NATIONAL_ID_PLACEHOLDER: 'کد ملی:',
   PHONE_LABEL: 'شماره تلفن همراه:',
@@ -20,4 +20,16 @@ export const GENERAL_CONTENT = {
   FORM_ERROR_RETRY: 'مجددا، تلاش کنید.',
   ERROR_PRIMARY_ACTION: 'تلاش مجدد',
   ERROR_SECONDARY_ACTION: 'بازگشت',
+};
+
+export const ROUTES = {
+  HOME: '/',
+  SUCCESS: '/success',
+};
+
+export const BASE_API_URL = 'https://front-end-task.bmbzr.ir/';
+
+export const API_ENDPOINTS = {
+  MY_ADDRESSES: `${BASE_API_URL}my-addresses/`,
+  ORDER_COMPLETION: `${BASE_API_URL}order/completion/`,
 };

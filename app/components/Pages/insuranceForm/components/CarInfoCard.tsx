@@ -2,17 +2,21 @@
 
 import React from 'react';
 import { Typography } from '@/app/components/atoms';
+import Image from 'next/image';
 
-export const CarInfoCard: React.FC = () => {
- const data = [
-     { label: "شرکت بیمه گر", value: "پارسیان" },
-     { label: "برند خودرو", value: "پژو" },
-     { label: "مدل خودرو", value: "206 تیپ 6" },
-   ];
+type CarInfoCardProps = {
+  className?: string;
+};
+
+export const CarInfoCard: React.FC<CarInfoCardProps> = ({ className }) => {
+  const data = [
+    { label: "شرکت بیمه گر", value: "پارسیان" },
+    { label: "برند خودرو", value: "پژو" },
+    { label: "مدل خودرو", value: "206 تیپ 6" },
+  ];
 
   return (
-    <div className="w-[280px] flex flex-col mx-auto mt-6">
-      {/* بخش بالا */}
+    <div className={`w-[280px] flex flex-col mx-auto mt-6 ${className}`}>
       <div className="border-[2px] w-full h-[50px] rounded-[5px] flex">
         <div className="w-[55px] h-full flex justify-center items-center">
           <Typography variant="text-semibold-18-100-black">60</Typography>
@@ -23,14 +27,23 @@ export const CarInfoCard: React.FC = () => {
           <Typography variant="text-semibold-18-100-black">64</Typography>
         </div>
         <div className="w-[48px] h-full flex flex-col items-center bg-[#1D48E1]">
-          <div className="w-[30px] h-[15px] border border-white mt-2"></div>
+          <div className="w-[30px] h-[15px] border-white mt-2 relative">
+            <Image
+              src="/flagIran.png"
+              alt="flag iran"
+              title="flag iran"
+              fill
+              sizes="21px"
+              style={{ objectFit: 'contain' }}
+              priority
+            />
+          </div>
           <Typography variant="text-normal-12-100-gray" className="!font-black !text-white mt-1">
             I.R.
           </Typography>
         </div>
       </div>
 
-      {/* بخش پایین */}
       <div className="mt-6 flex flex-col h-[84px] justify-between">
         {data.map(({ label, value }, index) => (
           <div className="flex items-center w-full" key={index}>
