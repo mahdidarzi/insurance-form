@@ -3,7 +3,7 @@ import { Typography } from "../../atoms";
 import Button from "../Button";
 
 interface ModalProps {
-  title: string;
+  title?: string;
   children: ReactNode;
   onClose: () => void;
   isOpen: boolean;
