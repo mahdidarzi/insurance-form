@@ -51,7 +51,7 @@ export default function Home() {
           onSingleButtonClick={handleChoose}
           disabledConfirm={mode === 'address-list' ? !selectedId : false}
           hasHeader
-          primaryButtonTitle="حذف"
+          primaryButtonTitle="تایید"
           secondaryButtonTitle="بازگشت"
           onPrimaryButtonClick={confirmDelete}
           onSecondaryButtonClick={closeModal}
