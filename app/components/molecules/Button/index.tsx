@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import classNames from 'classnames';
 import styles from './button.module.scss';
-import { Typography, Loading } from '@/app/components/atoms';
+import { Loading } from '@/app/components/atoms';
 
 export type ButtonVariant =
   | 'primary'
@@ -38,11 +38,11 @@ const Button = ({
         className
       )}
     >
-    
-        <span style={{ display: 'inline-flex', alignItems: 'center' }}>
-          {loading && <span className='ml-[0px] max-w-[30px] max-h-[49px] flex items-center justify-center'><Loading /></span>}
-          {children}
-        </span>
+
+      <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+        {loading && <span className='ml-[0px] max-w-[30px] max-h-[49px] flex items-center justify-center'><Loading /></span>}
+        {children}
+      </span>
     </button>
   );
 };

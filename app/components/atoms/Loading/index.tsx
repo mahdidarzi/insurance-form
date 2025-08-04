@@ -22,8 +22,6 @@ const Loading = ({ size = '.30' }: LoadingProps) => {
     '#EBEBEB',
     '#EBEBEB',
     '#EBEBEB',
-    // '#00000080',
-    // '#11111199',
   ];
 
   return (
