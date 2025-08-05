@@ -1,0 +1,15 @@
+:root {
+  --color-indigo-500: #6366f1;  
+  --color-purple-500: #8b5cf6;
+  --color-pink-500: #ec4899; 
+}
+
+.container {
+  @apply  border min-h-screen flex justify-center items-center ;
+   background: linear-gradient(
+    to bottom right,
+    var(--color-indigo-500),
+    var(--color-purple-500),
+    var(--color-pink-500)
+  );
+}
